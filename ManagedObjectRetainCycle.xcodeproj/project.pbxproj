@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		146BBFD1F8A4E1D0F6219378 /* Pods_ManagedObjectRetainCycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 389A5B32FAE62F748C0606E0 /* Pods_ManagedObjectRetainCycle.framework */; };
 		A90B6D2B20DAAAD3000C1131 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90B6D2A20DAAAD3000C1131 /* AppDelegate.swift */; };
 		A90B6D2D20DAAAD3000C1131 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90B6D2C20DAAAD3000C1131 /* ViewController.swift */; };
 		A90B6D3020DAAAD3000C1131 /* ManagedObjectRetainCycle.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A90B6D2E20DAAAD3000C1131 /* ManagedObjectRetainCycle.xcdatamodeld */; };
 		A90B6D3220DAAAD8000C1131 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A90B6D3120DAAAD8000C1131 /* Assets.xcassets */; };
 		A90B6D3520DAAAD8000C1131 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A90B6D3320DAAAD8000C1131 /* Main.storyboard */; };
+		A958965420DC191F0059BA11 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = A958965320DC191F0059BA11 /* Context.swift */; };
+		A9641DB120DABA9A00FB8E4A /* DataSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9641DB020DABA9A00FB8E4A /* DataSeeder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07BF83B40652BAB6079FA648 /* Pods-ManagedObjectRetainCycle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManagedObjectRetainCycle.release.xcconfig"; path = "Pods/Target Support Files/Pods-ManagedObjectRetainCycle/Pods-ManagedObjectRetainCycle.release.xcconfig"; sourceTree = "<group>"; };
+		389A5B32FAE62F748C0606E0 /* Pods_ManagedObjectRetainCycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ManagedObjectRetainCycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E69C5B6AE620B33B84EC663 /* Pods-ManagedObjectRetainCycle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManagedObjectRetainCycle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ManagedObjectRetainCycle/Pods-ManagedObjectRetainCycle.debug.xcconfig"; sourceTree = "<group>"; };
 		A90B6D2720DAAAD3000C1131 /* ManagedObjectRetainCycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ManagedObjectRetainCycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A90B6D2A20DAAAD3000C1131 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A90B6D2C20DAAAD3000C1131 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -23,6 +29,8 @@
 		A90B6D3420DAAAD8000C1131 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A90B6D3620DAAAD8000C1131 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A90B6D3720DAAAD8000C1131 /* ManagedObjectRetainCycle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ManagedObjectRetainCycle.entitlements; sourceTree = "<group>"; };
+		A958965320DC191F0059BA11 /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
+		A9641DB020DABA9A00FB8E4A /* DataSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSeeder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,17 +38,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				146BBFD1F8A4E1D0F6219378 /* Pods_ManagedObjectRetainCycle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C2FC39CEDFDFDC5D2B3A923 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7E69C5B6AE620B33B84EC663 /* Pods-ManagedObjectRetainCycle.debug.xcconfig */,
+				07BF83B40652BAB6079FA648 /* Pods-ManagedObjectRetainCycle.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8EF68A3FCC539DF308275244 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				389A5B32FAE62F748C0606E0 /* Pods_ManagedObjectRetainCycle.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A90B6D1E20DAAAD3000C1131 = {
 			isa = PBXGroup;
 			children = (
 				A90B6D2920DAAAD3000C1131 /* ManagedObjectRetainCycle */,
 				A90B6D2820DAAAD3000C1131 /* Products */,
+				8C2FC39CEDFDFDC5D2B3A923 /* Pods */,
+				8EF68A3FCC539DF308275244 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,6 +83,7 @@
 		A90B6D2920DAAAD3000C1131 /* ManagedObjectRetainCycle */ = {
 			isa = PBXGroup;
 			children = (
+				A9641DAF20DABA6900FB8E4A /* Model */,
 				A90B6D2A20DAAAD3000C1131 /* AppDelegate.swift */,
 				A90B6D2C20DAAAD3000C1131 /* ViewController.swift */,
 				A90B6D3120DAAAD8000C1131 /* Assets.xcassets */,
@@ -66,6 +95,15 @@
 			path = ManagedObjectRetainCycle;
 			sourceTree = "<group>";
 		};
+		A9641DAF20DABA6900FB8E4A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A9641DB020DABA9A00FB8E4A /* DataSeeder.swift */,
+				A958965320DC191F0059BA11 /* Context.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -73,9 +111,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A90B6D3A20DAAAD8000C1131 /* Build configuration list for PBXNativeTarget "ManagedObjectRetainCycle" */;
 			buildPhases = (
+				D5A6D922425C20F3823F99EF /* [CP] Check Pods Manifest.lock */,
 				A90B6D2320DAAAD3000C1131 /* Sources */,
 				A90B6D2420DAAAD3000C1131 /* Frameworks */,
 				A90B6D2520DAAAD3000C1131 /* Resources */,
+				4496AC5D8BD036D6F26BA1CA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,13 +171,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4496AC5D8BD036D6F26BA1CA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ManagedObjectRetainCycle/Pods-ManagedObjectRetainCycle-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Fakery/Fakery.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fakery.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ManagedObjectRetainCycle/Pods-ManagedObjectRetainCycle-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5A6D922425C20F3823F99EF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ManagedObjectRetainCycle-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A90B6D2320DAAAD3000C1131 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A90B6D3020DAAAD3000C1131 /* ManagedObjectRetainCycle.xcdatamodeld in Sources */,
+				A9641DB120DABA9A00FB8E4A /* DataSeeder.swift in Sources */,
 				A90B6D2D20DAAAD3000C1131 /* ViewController.swift in Sources */,
+				A958965420DC191F0059BA11 /* Context.swift in Sources */,
 				A90B6D2B20DAAAD3000C1131 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +352,7 @@
 		};
 		A90B6D3B20DAAAD8000C1131 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E69C5B6AE620B33B84EC663 /* Pods-ManagedObjectRetainCycle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ManagedObjectRetainCycle/ManagedObjectRetainCycle.entitlements;
@@ -290,6 +372,7 @@
 		};
 		A90B6D3C20DAAAD8000C1131 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07BF83B40652BAB6079FA648 /* Pods-ManagedObjectRetainCycle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ManagedObjectRetainCycle/ManagedObjectRetainCycle.entitlements;

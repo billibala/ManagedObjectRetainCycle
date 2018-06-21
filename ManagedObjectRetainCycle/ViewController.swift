@@ -10,6 +10,11 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+    var persistentContainer: NSPersistentContainer {
+        let theDelegate = NSApp.delegate as! AppDelegate
+        return theDelegate.persistentContainer
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +27,16 @@ class ViewController: NSViewController {
         }
     }
 
+    @IBAction func handleSeedDataClick(_ sender: Any) {
+        let seeder = DataSeeder(context: persistentContainer.newBackgroundContext())
+        seeder.seedDatabase()
+    }
 
+    @IBAction func handleTransverseAProject(_ sender: Any) {
+        let viewContext = persistentContainer.viewContext
+        viewContext.performAndWait {
+            viewContext.transverseAProject()
+        }
+    }
 }
 
