@@ -1,4 +1,4 @@
-//
+    //
 //  Context.swift
 //  ManagedObjectRetainCycle
 //
@@ -8,6 +8,9 @@
 
 import Foundation
 import CoreData
+
+weak var retainedTodoList: TodoList?
+weak var retainedTodo: Todo?
 
 extension NSManagedObjectContext {
     private func fetchRandomProject() -> Project {
@@ -21,22 +24,98 @@ extension NSManagedObjectContext {
 
     func transverseAProject() {
         let theProject = fetchRandomProject()
-        print("Project: \(theProject.title)")
+        print("Project: \(theProject.title!)")
 
         theProject.todoLists?.forEach { todoList in
             guard let todoList = todoList as? TodoList else {
                 return
             }
 
-            print("Todo List: \(todoList.title)")
+            print("Todo List: \(todoList.title!)")
+            retainedTodoList = todoList
 
             todoList.todos?.forEach { todo in
                 guard let todo = todo as? Todo else {
                     return
                 }
 
-                print("Todo: \(todo.title)")
+                print("Todo: \(todo.title!)")
+                retainedTodo = todo
             }
+        }
+    }
+
+    func transverseAProjectAndInvokeParent() {
+        let theProject = fetchRandomProject()
+        print("Project: \(theProject.title!)")
+
+        theProject.todoLists?.forEach { todoList in
+            guard let todoList = todoList as? TodoList else {
+                return
+            }
+
+            print("Todo List: \(todoList.title!)")
+            retainedTodoList = todoList
+
+            todoList.todos?.forEach { todo in
+                guard let todo = todo as? Todo else {
+                    return
+                }
+
+                print("Todo: \(todo.title!) \(todo.objectID) \(todo.todoList!.objectID)")
+                retainedTodo = todo
+            }
+        }
+    }
+
+    func transverseAProjectAndRefreshAllTodos() {
+        let theProject = fetchRandomProject()
+        print("Project: \(theProject.title!)")
+
+        theProject.todoLists?.forEach { todoList in
+            guard let todoList = todoList as? TodoList else {
+                return
+            }
+
+            print("Todo List: \(todoList.title!)")
+            retainedTodoList = todoList
+
+            todoList.todos?.forEach { todo in
+                guard let todo = todo as? Todo else {
+                    return
+                }
+
+                print("Todo: \(todo.title!) \(todo.objectID) \(todo.todoList!.objectID)")
+                retainedTodo = todo
+
+                todo.managedObjectContext?.refresh(todo, mergeChanges: false)
+            }
+        }
+    }
+
+    func transverseAProjectAndRefreshAllTodoLists() {
+        let theProject = fetchRandomProject()
+        print("Project: \(theProject.title!)")
+
+        theProject.todoLists?.forEach { todoList in
+            guard let todoList = todoList as? TodoList else {
+                return
+            }
+
+            print("Todo List: \(todoList.title!)")
+            retainedTodoList = todoList
+
+            todoList.todos?.forEach { todo in
+                guard let todo = todo as? Todo else {
+                    return
+                }
+
+                print("Todo: \(todo.title!) \(todo.objectID) \(todo.todoList!.objectID)")
+                retainedTodo = todo
+            }
+
+            todoList.managedObjectContext?.refresh(todoList, mergeChanges: false)
+
         }
     }
 }
