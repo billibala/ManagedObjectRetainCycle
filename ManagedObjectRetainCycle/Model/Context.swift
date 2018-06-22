@@ -65,57 +65,9 @@ extension NSManagedObjectContext {
                 print("Todo: \(todo.title!) \(todo.objectID) \(todo.todoList!.objectID)")
                 retainedTodo = todo
             }
-        }
-    }
 
-    func transverseAProjectAndRefreshAllTodos() {
-        let theProject = fetchRandomProject()
-        print("Project: \(theProject.title!)")
-
-        theProject.todoLists?.forEach { todoList in
-            guard let todoList = todoList as? TodoList else {
-                return
-            }
-
-            print("Todo List: \(todoList.title!)")
-            retainedTodoList = todoList
-
-            todoList.todos?.forEach { todo in
-                guard let todo = todo as? Todo else {
-                    return
-                }
-
-                print("Todo: \(todo.title!) \(todo.objectID) \(todo.todoList!.objectID)")
-                retainedTodo = todo
-
-                todo.managedObjectContext?.refresh(todo, mergeChanges: false)
-            }
-        }
-    }
-
-    func transverseAProjectAndRefreshAllTodoLists() {
-        let theProject = fetchRandomProject()
-        print("Project: \(theProject.title!)")
-
-        theProject.todoLists?.forEach { todoList in
-            guard let todoList = todoList as? TodoList else {
-                return
-            }
-
-            print("Todo List: \(todoList.title!)")
-            retainedTodoList = todoList
-
-            todoList.todos?.forEach { todo in
-                guard let todo = todo as? Todo else {
-                    return
-                }
-
-                print("Todo: \(todo.title!) \(todo.objectID) \(todo.todoList!.objectID)")
-                retainedTodo = todo
-            }
-
-            todoList.managedObjectContext?.refresh(todoList, mergeChanges: false)
-
+            // Turning `todoList` back into a fault to release any strongly held relationship.
+//            todoList.managedObjectContext?.refresh(todoList, mergeChanges: false)
         }
     }
 }

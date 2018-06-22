@@ -28,10 +28,10 @@ class ViewController: NSViewController {
 
     @IBAction func handleShowSomething(_ sender: Any) {
         print("Is todo list retained?")
-        dump(retainedTodoList)
+        dump(retainedTodoList?.objectID)
 
         print("Is todo retained?")
-        dump(retainedTodo)
+        dump(retainedTodo?.objectID)
     }
 
     @IBAction func handleSeedDataClick(_ sender: Any) {
@@ -50,20 +50,6 @@ class ViewController: NSViewController {
         let viewContext = persistentContainer.viewContext
         viewContext.performAndWait {
             viewContext.transverseAProjectAndInvokeParent()
-        }
-    }
-
-    @IBAction func handleTransverseAndRefreshTodoList(_ sender: Any) {
-        let viewContext = persistentContainer.viewContext
-        viewContext.performAndWait {
-            viewContext.transverseAProjectAndRefreshAllTodoLists()
-        }
-    }
-
-    @IBAction func handleTransverseAndRefreshAllTodos(_ sender: Any) {
-        let viewContext = persistentContainer.viewContext
-        viewContext.performAndWait {
-            viewContext.transverseAProjectAndRefreshAllTodos()
         }
     }
 }
