@@ -22,3 +22,9 @@ Expectation: only 1 todo object remains. No extra ones.
 - Try searching for any `todo` object using the `Filter` at the bottom left of the window.
 
 Expectation: Lots of todo object persisting in memory.
+
+## What's the behavior when creating managed objects?
+
+When creating new mananged objects, the behavior is the same. 
+
+Creating a parent object. Then, assign child object to it does **not** create strong reference cycle. Strong reference cycle occurs when the parent and child objects reference to each other in the same autorelease pool scope (not tested yet).
