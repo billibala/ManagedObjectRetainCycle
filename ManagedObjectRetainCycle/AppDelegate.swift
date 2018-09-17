@@ -32,7 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         */
         let container = NSPersistentContainer(name: "ManagedObjectRetainCycle")
         container.loadPersistentStores { (storeDescription, error) in
-            debugPrint(storeDescription.url)
+            debugPrint(storeDescription.url!)
             if let error = error {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
